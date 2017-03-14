@@ -1,0 +1,26 @@
+rand_res Vec2
+	x 256
+	y 256
+
+fb_res Vec2
+	x 1280
+	y 720
+
+rand_tex RandomTexture
+	resolution rand_res
+	seed 1
+
+ray_source ShaderSource
+	file trace.glsl
+
+ray_draw DrawFullscreen
+	fragment ray_source
+	uniform	uf_time time
+	uniform uv2_resolution resolution
+	uniform us2_rand rand_tex
+	uniform us2_rand_resolution rand_tex.resolution
+
+framebuffer Framebuffer
+	resolution fb_res
+
+
