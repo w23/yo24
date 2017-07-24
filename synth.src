@@ -1,0 +1,19 @@
+pushi 0
+pushs 0
+padd
+dup ; kek
+pops 0
+psine
+
+push 0.0001
+pushs 1
+padd
+dup
+pops 1
+psine
+mul
+push 2
+mul
+
+; PADD
+; FIX COMMENT 
