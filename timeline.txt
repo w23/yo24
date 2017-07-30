@@ -9,7 +9,7 @@ preview_loop 0:0 4:0
 ; set <row> <value>
 ; lin <row> <value_end> <time_end>
 
-pattern 0
+program 0
 t 0:0
 	set 0 1
 	set 1 45
@@ -41,19 +41,11 @@ t 1:12
 t 2:0
 	loop
 
-pattern 1
+program 1
 t 0:0
 	set 0 0
 	set 1 0
 	set 2 0
 t 1:0
-
-score
-t 0:0
-	pstart 0
-t 1:0
-	pstart 0
-t 2:0
-	end
 
 
