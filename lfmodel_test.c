@@ -1,2 +1,2 @@
 #define LFM_RUN_TEST
-#include "lfmodel.h"
+#include "tool/lfmodel.h"
