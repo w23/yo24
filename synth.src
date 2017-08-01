@@ -1,5 +1,10 @@
-pushi 0
-noise
+push .01
+paddst 0
+push .00001
+paddst 1
+psine
+push .5
 mul
-push .2
-mul
+push .5
+add
+ptri
