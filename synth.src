@@ -23,8 +23,7 @@ mul
 ; "hh"
 pushi 4
 pushs 4
-maddi -1. 0.
-add
+sub
 clampi 0. 1.
 pushs 5
 maddi .997 0.
