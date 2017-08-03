@@ -1,13 +1,84 @@
-bpm 240
-bar_ticks 16
+bpm 120
+bar_ticks 32
 
 ; time = "bar:tick"
-preview_loop 0:0 2:0
+preview_loop 0:0 16:0
 
 ; set <row> <value>
 ; lin <row> <value_end> <time_end>
 
+program 1
+t 0:0
+	set 4 1
+t 0:1
+	set 4 0
+t 0:4
+	loop
+
+program 2
+t 0:0
+	set 6 1
+	lin 6 0 0:3
+t 0:3
+	set 6 0
+t 1:10
+	set 6 1
+	lin 6 0 0:3
+t 1:13
+	set 6 0
+t 2:0
+	loop
+
+program 3
+t 0:16
+	set 7 1
+	lin 7 0 0:2
+t 0:18
+	set 7 0
+t 1:16
+	set 7 1
+	lin 7 0 0:2
+t 1:18
+	set 7 0
+t 2:0
+	loop
+
 program 0
+t 0:0
+	pstart 1 1
+	pstart 2 2
+	pstart 3 3 
+	pstart 4 4
+	pstart 5 5 
+t 0:8
+	pstart 1 1
+t 0:10
+	pstart 1 1
+	;pstart 2 2
+t 0:12
+	pstart 1 1
+t 0:14
+	pstart 1 1
+t 4:0
+	loop
+
+program 5
+t 0:0
+	set 8 21
+t 0:31
+	lin 8 20 0:1
+t 1:0
+	set 8 20
+t 1:31
+	lin 8 19 0:1
+t 2:0
+	set 8 19
+t 2:31
+	lin 8 21 0:1
+t 3:0
+	loop
+
+program 4
 t 0:0
 	set 0 1
 	set 1 45

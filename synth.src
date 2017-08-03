@@ -17,3 +17,89 @@ push -1.
 add
 pushi 0
 mul
+push 0
+mul
+
+; "hh"
+pushi 4
+pushs 4
+maddi -1. 0.
+add
+clampi 0. 1.
+pushs 5
+maddi .997 0.
+add
+clampi 0. 1.
+dup
+pops 5
+pushi 4
+pops 4
+
+; "hh" sound
+noise
+mul
+push .3
+mul
+add
+
+;push .2
+;mul
+
+; "kick"
+pushi 6
+;push 2
+;pow
+dup
+maddi -1 1
+rdivi .0008
+clampi .001 1.
+paddst 2
+dup
+push .2
+ptri
+swap
+psine
+add
+maddi 2. 0
+clampi -1. 1.
+noise
+push .08
+mul
+add
+mul
+push .8
+mul
+add
+
+; "snare"
+push .007
+paddst 3
+push .8
+ptri
+push .2
+mul
+noise
+add
+pushi 7
+mul
+add
+
+;pushdpfreq 55.
+pushi 8
+mtodp
+paddst 6
+pushdpfreq .1
+paddst 7
+psine
+maddi .3 .5
+;push .4
+ptri
+maddi 1.7 0.
+clampi -.8 .8
+maddi .5 0.
+
+add
+; TODO compress?
+
+; clamp output
+clampi -1. 1.
