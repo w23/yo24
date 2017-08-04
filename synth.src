@@ -26,7 +26,7 @@ push -1.
 add
 pushi 0
 mul
-push 0
+push .0
 mul
 
 ; "hh"
@@ -111,3 +111,6 @@ add
 
 ; clamp output
 clampi -1. 1.
+
+push 1
+mul

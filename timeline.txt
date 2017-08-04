@@ -9,6 +9,8 @@ preview_loop 0:0 16:0
 
 midi_ctl 48 13 0. 20. 0.
 
+midi_voice 8 -1 -1
+
 program 1
 t 0:0
 	set 4 1
@@ -49,9 +51,9 @@ program 0
 t 0:0
 	pstart 1 1
 	pstart 2 2
-	pstart 3 3 
+	pstart 3 3
 	pstart 4 4
-	pstart 5 5 
+	pstart 5 5
 t 0:8
 	pstart 1 1
 t 0:10
