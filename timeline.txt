@@ -7,6 +7,8 @@ preview_loop 0:0 16:0
 ; set <row> <value>
 ; lin <row> <value_end> <time_end>
 
+midi_ctl 48 13 0. 20. 0.
+
 program 1
 t 0:0
 	set 4 1
