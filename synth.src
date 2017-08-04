@@ -1,8 +1,17 @@
+state_var lead_phase
+state_var hh_fall
+state_var hh_what
+state_var kick_phase
+state_var snare_phase
+state_var lead_modp
+state_var bass_phase
+state_var bass_modphase
+
 pushi 1
 mtodp
-paddst 0
+paddst $lead_phase
 push .00001
-paddst 1
+paddst $lead_modp
 psine
 push .5
 mul
@@ -22,17 +31,17 @@ mul
 
 ; "hh"
 pushi 4
-pushs 4
+pushs $hh_fall
 sub
 clampi 0. 1.
-pushs 5
+pushs $hh_what
 maddi .997 0.
 add
 clampi 0. 1.
 dup
-pops 5
+pops $hh_what
 pushi 4
-pops 4
+pops $hh_fall
 
 ; "hh" sound
 noise
@@ -52,7 +61,7 @@ dup
 maddi -1 1
 rdivi .0008
 clampi .001 1.
-paddst 2
+paddst $kick_phase
 dup
 push .2
 ptri
@@ -72,7 +81,7 @@ add
 
 ; "snare"
 push .007
-paddst 3
+paddst $snare_phase
 push .8
 ptri
 push .2
@@ -86,9 +95,9 @@ add
 ;pushdpfreq 55.
 pushi 8
 mtodp
-paddst 6
+paddst $bass_phase
 pushdpfreq .1
-paddst 7
+paddst $bass_modphase
 psine
 maddi .3 .5
 ;push .4
