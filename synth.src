@@ -1,4 +1,13 @@
-state_var lead_phase
+state_var lead_phase0
+state_var lead_phase1
+state_var lead_phase2
+state_var lead_phase3
+
+state_var lead_vel0
+state_var lead_vel1
+state_var lead_vel2
+state_var lead_vel3
+
 state_var hh_fall
 state_var hh_what
 state_var kick_phase
@@ -7,26 +16,97 @@ state_var lead_modp
 state_var bass_phase
 state_var bass_modphase
 
-pushi 1
-mtodp
-paddst $lead_phase
 push .00001
 paddst $lead_modp
+pop
+
+pushi 20
+mtodp
+paddst $lead_phase0
 psine
-push .5
-mul
-push .5
+push -.00005
+push .01
+pushi 21
+stepi .1
+mix
+pushs $lead_vel0
 add
-ptri
+clampi 0. 1.
 dup
+pops $lead_vel0
 mul
-push 2.
-mul
-push -1.
+
+pushi 22
+mtodp
+paddst $lead_phase1
+psine
+push -.00005
+push .01
+pushi 23
+stepi .1
+mix
+pushs $lead_vel1
 add
-pushi 0
+clampi 0. 1.
+dup
+pops $lead_vel1
 mul
-push .0
+
+pushi 24
+mtodp
+paddst $lead_phase2
+psine
+push -.00005
+push .01
+pushi 25
+stepi .1
+mix
+pushs $lead_vel2
+add
+clampi 0. 1.
+dup
+pops $lead_vel2
+mul
+
+pushi 26
+mtodp
+paddst $lead_phase3
+psine
+push -.00005
+push .01
+pushi 27
+stepi .1
+mix
+pushs $lead_vel3
+add
+clampi 0. 1.
+dup
+pops $lead_vel3
+mul
+
+;pushi 26
+;mtodp
+;paddst $lead_phase3
+;pushs $lead_modp
+;psine
+;push .5
+;mul
+;push .5
+;add
+;ptri
+;dup
+;mul
+;push 2.
+;mul
+;push -1.
+;add
+;pushi 27
+;mul
+
+add
+add
+add
+push .25
 mul
 
 ; "hh"
@@ -105,6 +185,8 @@ ptri
 maddi 1.7 0.
 clampi -.8 .8
 maddi .5 0.
+push 0
+mul
 
 add
 ; TODO compress?
