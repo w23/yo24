@@ -68,14 +68,28 @@ t 0:16
 t 1:0
 	loop
 
+program 6
+t 0:0
+	set 3 0
+	lin 3 3 1:0
+t 1:0
+	loop
+
 program 0
 t 0:0
-	pstart 1 1
-	pstart 2 2
-	pstart 3 3
-	pstart 4 4
-	pstart 5 5
-t 4:0
+	set 0 0
+	lin 0 1 0:16
+	set 1 0
+	lin 1 20 4:0
+	set 2 0
+	lin 2 1 8:0
+	pstart 6 6
+	;pstart 1 1
+	;pstart 2 2
+	;pstart 3 3
+	;pstart 4 4
+	;pstart 5 5
+t 16:0
 	loop
 
 program 5
