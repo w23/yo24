@@ -1,4 +1,4 @@
-bpm 120
+bpm 160
 bar_ticks 32
 
 ; time = "bar:tick"
@@ -7,47 +7,65 @@ preview_loop 0:0 16:0
 ; set <row> <value>
 ; lin <row> <value_end> <time_end>
 
-midi_ctl 48 13 0. 20. 0.
+midi_ctl 48 10 0. 20. 0.
+midi_ctl 49 11 0. 20. 0.
+midi_ctl 50 12 0. 20. 0.
+midi_ctl 51 13 0. 20. 0.
+midi_ctl 52 14 0. 1. 0.
+midi_ctl 53 15 0. 1. 0.
+midi_ctl 54 16 0. 1. 0.
+midi_ctl 55 17 0. 1. 0.
 
 midi_voice 20 21 -1
 midi_voice 22 23 -1
 midi_voice 24 25 -1
 midi_voice 26 27 -1
 
+; hh
 program 1
 t 0:0
 	set 4 1
 t 0:1
 	set 4 0
 t 0:4
+	set 4 .15
+t 0:5
+	set 4 0
+t 0:8
 	loop
 
+; kick
 program 2
 t 0:0
 	set 6 1
-	lin 6 0 0:3
-t 0:3
-	set 6 0
-t 1:10
+	lin 6 0 0:4
+t 0:20
 	set 6 1
-	lin 6 0 0:3
-t 1:13
-	set 6 0
+	lin 6 0 0:4
+t 1:0
+	set 6 1
+	lin 6 0 0:4
 t 2:0
+	set 6 1
+	lin 6 0 0:4
+t 2:20
+	set 6 1
+	lin 6 0 0:4
+t 3:0
+	set 6 1
+	lin 6 0 0:4
+t 3:24
+	set 6 1
+	lin 6 0 0:4
+t 4:0
 	loop
 
+; snare
 program 3
 t 0:16
 	set 7 1
 	lin 7 0 0:2
-t 0:18
-	set 7 0
-t 1:16
-	set 7 1
-	lin 7 0 0:2
-t 1:18
-	set 7 0
-t 2:0
+t 1:0
 	loop
 
 program 0

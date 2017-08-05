@@ -23,7 +23,8 @@ pop
 pushi 20
 mtodp
 paddst $lead_phase0
-psine
+push .5
+ptri
 push -.00005
 push .01
 pushi 21
@@ -39,7 +40,8 @@ mul
 pushi 22
 mtodp
 paddst $lead_phase1
-psine
+push .5
+ptri
 push -.00005
 push .01
 pushi 23
@@ -55,7 +57,8 @@ mul
 pushi 24
 mtodp
 paddst $lead_phase2
-psine
+push .5
+ptri
 push -.00005
 push .01
 pushi 25
@@ -71,7 +74,8 @@ mul
 pushi 26
 mtodp
 paddst $lead_phase3
-psine
+push .5
+ptri
 push -.00005
 push .01
 pushi 27
@@ -135,8 +139,10 @@ add
 
 ; "kick"
 pushi 6
-;push 2
-;pow
+push 0
+max
+push 2
+pow
 dup
 maddi -1 1
 rdivi .0008
@@ -160,15 +166,23 @@ mul
 add
 
 ; "snare"
-push .007
+pushdpfreq 220.
 paddst $snare_phase
-push .8
+push .5
 ptri
-push .2
+push .5
+mul
+pushi 7
+push 0
+max
 mul
 noise
 add
 pushi 7
+push 0
+max
+push 2
+pow
 mul
 add
 
@@ -194,5 +208,5 @@ add
 ; clamp output
 clampi -1. 1.
 
-push 1
+push 0
 mul
